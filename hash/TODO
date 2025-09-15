@@ -1,0 +1,6 @@
+- Hash Write
+- Hash Sum
+- Reset
+- SumHex(data []byte) string
+- SumBase64(data []byte) string
+- SecureCompare

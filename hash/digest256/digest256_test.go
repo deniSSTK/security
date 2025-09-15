@@ -1,6 +1,7 @@
-package hash
+package digest256
 
 import (
+	"bytes"
 	"strings"
 	"testing"
 )
@@ -11,7 +12,7 @@ func TestHashEqual(t *testing.T) {
 			hash1 := ToHash256([]byte(tt))
 			hash2 := ToHash256([]byte(tt))
 
-			if hash1 != hash2 {
+			if bytes.Equal(hash1, hash2) {
 				t.Errorf("hash1 and hash2 are not equal")
 			}
 		})
