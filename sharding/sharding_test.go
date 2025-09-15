@@ -41,9 +41,9 @@ func TestShardedUUIDEqualValues(t *testing.T) {
 	numShards := 4
 	countTests := 10
 
-	var ids []uuid.UUID
+	ids := make([]uuid.UUID, countTests)
 	for i := 0; i < countTests; i++ {
-		ids = append(ids, uuid.New())
+		ids[i] = uuid.New()
 	}
 
 	for _, tt := range ids {
