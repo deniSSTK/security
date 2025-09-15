@@ -1,7 +1,6 @@
-package sharding_test
+package sharding
 
 import (
-	"security/sharding"
 	"testing"
 
 	"github.com/google/uuid"
@@ -29,7 +28,7 @@ func TestShardedUUID(t *testing.T) {
 
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			shard := sharding.ShardedUUID(tt.id, numShards)
+			shard := ShardedUUID(tt.id, numShards)
 
 			if shard != tt.expectedShard {
 				t.Errorf("expected shard %d, got %d", tt.expectedShard, shard)
@@ -49,8 +48,8 @@ func TestShardedUUIDEqualValues(t *testing.T) {
 
 	for _, tt := range ids {
 		t.Run("Id="+tt.String(), func(t *testing.T) {
-			shard1 := sharding.ShardedUUID(tt, numShards)
-			shard2 := sharding.ShardedUUID(tt, numShards)
+			shard1 := ShardedUUID(tt, numShards)
+			shard2 := ShardedUUID(tt, numShards)
 
 			if shard1 != shard2 {
 				t.Errorf("expected shard %d, got %d", shard1, shard2)
