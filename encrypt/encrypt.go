@@ -12,3 +12,7 @@ func Encrypt(text, key string) string {
 	}
 	return string(output)
 }
+
+func Decrypt(text, key string) string {
+	return Encrypt(text, key)
+}
