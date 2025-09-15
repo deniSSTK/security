@@ -13,7 +13,7 @@ func Encrypt(text, key string) string {
 	return string(output)
 }
 
-func Decrypt(hashedText, text, key string) bool {
+func Compare(hashedText, text, key string) bool {
 	encrypted := Encrypt(text, key)
 	return hashedText == encrypted
 }
