@@ -32,6 +32,12 @@ func ToHash256(data []byte) [hash256StateSize]byte {
 	return state
 }
 
+// ToHash256String
+// Same function but takes a string as input
+func ToHash256String(data string) [hash256StateSize]byte {
+	return ToHash256([]byte(data))
+}
+
 func Compare(hashedText [32]byte, text string) bool {
 	return hashedText == ToHash256([]byte(text))
 }
